@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Built apps / binaries (DON'T push these)
+*.app/
+dist/
+build/
+
+# Playwright / node binaries if they appear
+node_modules/
