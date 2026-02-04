@@ -10,7 +10,7 @@ import webbrowser
 from pathlib import Path
 import shutil
 
-# ---------------------- GUI Builder ----------------------
+# GUI Builder
 
 def build_gui() -> sg.Window:
     sg.theme("SystemDefault")
@@ -32,7 +32,7 @@ def build_gui() -> sg.Window:
     ]
     return sg.Window("FANR Datasheet Checker", layout, finalize=True)
 
-# -------------------- Excel Reader --------------------
+# Excel Reader
 
 def read_materials_from_excel(excel_path: Path) -> list[str]:
     """Read unique, non-empty product codes from column C."""
@@ -47,7 +47,7 @@ def read_materials_from_excel(excel_path: Path) -> list[str]:
           .tolist()
     )
 
-# ----------------- Missing Checker -------------------
+# Missing Checker
 
 def find_missing_datasheets(folder: Path, codes: list[str]) -> list[str]:
     """Return codes for which there is no file ending with '{code}.pdf' in folder."""
@@ -62,7 +62,7 @@ def find_missing_datasheets(folder: Path, codes: list[str]) -> list[str]:
             missing.append(code)
     return missing
 
-# ----------------------- Main -------------------------
+# Main
 
 def main():
     window = build_gui()
